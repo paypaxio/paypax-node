@@ -1,0 +1,48 @@
+{
+  "name": "paypax-node",
+  "version": "1.0.5",
+  "description": "This Module enables you to build apps which are using PayPax Payment Gateway and accept crypto payments.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc --project tsconfig.dev.json",
+    "build-prod": "npm run clean && tsc --project tsconfig.prod.json",
+    "typedoc": "typedoc --tsconfig tsconfig.prod.json ./src --out docs/code",
+    "clean": "tsc --build --clean && rimraf docs/code && rimraf coverage && rimraf .nyc_output && rimraf dist",
+    "fmt": "prettier --write .",
+    "codeanalysis": "eslint src",
+    "test": "nyc  --require ts-node/register jasmine"
+  },
+  "files": [
+    "dist/"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paypaxio/paypax-node.git"
+  },
+  "keywords": ["payment gateway","crypto payment gateway","cryptocurrency","cryptopayment","crypto"],
+  "author": "PayPax Inc",
+  "license": "GPL-2.0-or-later",
+  "bugs": {
+    "url": "https://github.com/paypaxio/paypax-node/issues"
+  },
+  "homepage": "https://github.com/paypaxio/paypax-node#readme",
+  "devDependencies": {
+    "@istanbuljs/nyc-config-typescript": "^1.0.2",
+    "@types/jasmine": "^4.0.3",
+    "@typescript-eslint/eslint-plugin": "^5.30.6",
+    "@typescript-eslint/parser": "^5.30.6",
+    "eslint": "^8.19.0",
+    "jasmine": "^4.2.1",
+    "jasmine-spec-reporter": "^7.0.0",
+    "nyc": "^15.1.0",
+    "prettier": "2.7.1",
+    "source-map-support": "^0.5.21",
+    "ts-node": "^10.8.2",
+    "typedoc": "^0.23.7",
+    "typescript": "^4.7.4"
+  },
+  "dependencies": {
+    "axios": "^0.27.2"
+  }
+}
